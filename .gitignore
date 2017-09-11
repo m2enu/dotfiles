@@ -1,0 +1,15 @@
+# temporary files
+# vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+.netrwhist
+
+# backup files
+*~
+*.orig
+*.bak
+
+# OS dependent files
+.DS_Store
+Thumbs.db

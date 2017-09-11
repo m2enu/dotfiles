@@ -1,0 +1,32 @@
+# -*- encoding: utf-8 -*-
+# Python Startup Script
+import readline
+import rlcompleter
+import atexit
+import os
+import sys
+import termcolor
+
+# enable tab complete
+if 'libedit' in readline.__doc__:
+    readline.parse_and_bind("bind ^I rl_complete")
+else:
+    readline.parse_and_bind("tab: complete")
+
+# save history in file
+histfile = os.path.join(os.environ['HOME'], '.pythonhistory')
+try:
+    readline.read_history_file(histfile)
+except IOError:
+    pass
+atexit.register(readline.write_history_file, histfile)
+
+# terminal color
+sys.ps1 = termcolor.colored('>>> ', 'cyan')
+sys.ps2 = termcolor.colored('... ', 'green')
+
+# finish
+sys.stdout.write(".pythonstartup loaded successfully !!\n")
+del os, histfile, readline, rlcompleter, atexit, sys, termcolor
+
+# vi: ft=python:et:ts=4:nowrap:fdm=marker
