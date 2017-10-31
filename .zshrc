@@ -107,25 +107,9 @@ setopt extended_glob
 bindkey '^R' history-incremental-pattern-search-backward
 
 # エイリアス {{{1
-alias la='ls -a'
-alias ll='ls -al'
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-alias mkdir='mkdir -p'
-
-if which python2 > /dev/null 2>&1; then
-    alias python='python2'
-fi
-if which pip2 > /dev/null 2>&1; then
-    alias pip='pip2'
-fi
-
-if which nvim > /dev/null 2>&1; then
-    alias vi='nvim'
-    alias vim='nvim'
+SRC_ALIASE=~/.zsh_aliases
+if [ -f ${SRC_ALIASE} ] && [ -e ${SRC_ALIASE} ]; then
+    . ${SRC_ALIASE}
 fi
 
 # sudo の後のコマンドでエイリアスを有効にする {{{2
