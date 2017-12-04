@@ -6,7 +6,7 @@ set noundofile
 
 " colors {{{1
 if has('patch-7.4.1778')
-    set guicolors
+"    set guicolors
 endif
 if has('termguicolors')
     set termguicolors
