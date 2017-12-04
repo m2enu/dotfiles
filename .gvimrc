@@ -2,8 +2,8 @@ scriptencoding cp932
 
 "カラー設定 {{{
 set background=dark
-colorscheme murphy
-"colorscheme hybrid
+"colorscheme murphy
+colorscheme hybrid
 
 "システム設定 {{{1
 "----------------------------------------
