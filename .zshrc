@@ -1,9 +1,7 @@
 # 環境変数 {{{1
 export LANG=ja_JP.UTF-8
-export PATH=$PATH:~/.local/bin
-export IDF_PATH=~/esp/esp-idf
-export PATH=$PATH:~/esp/xtensa-esp32-elf/bin
-export XDG_CONFIG_HOME=$HOME/.config
+export PATH=${PATH}:~/.local/bin
+export XDG_CONFIG_HOME=${HOME}/.config
 
 # 色を使用出来るようにする {{{1
 autoload -Uz colors
