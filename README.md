@@ -11,21 +11,21 @@ dotfiles
  |
  |- .config
  |   |
- |   \- nvim <- Neovim config files
+ |   `- nvim <- Neovim config files
  |
  |- bin <- own scripts, binaries
  |- etc <- setting script files
  |   |
  |   |- init <- initialisation scripts for install
  |   |- lib <- library files
- |   \- test <- test files for initialisation scripts or dotfiles
+ |   `- test <- test files for initialisation scripts or dotfiles
  |
  |- doc <- documentation, manual, etc... not "bin" or "etc" files
  |
  |- Makefile
  |- .zshrc
  |- .tmux.conf
- \- ...
+ `- ...
 ```
 
 ## Installation <!-- {{{1 -->
