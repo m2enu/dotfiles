@@ -8,7 +8,7 @@ import sys
 import termcolor
 
 # enable tab complete
-if 'libedit' in readline.__doc__:
+if hasattr(readline.__doc__, '__iter__') and 'libedit' in readline.__doc__:
     readline.parse_and_bind("bind ^I rl_complete")
 else:
     readline.parse_and_bind("tab: complete")
