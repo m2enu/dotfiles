@@ -1,0 +1,21 @@
+[color]
+    ui = auto
+[alias]
+    st          = status
+    glog        = log --pretty=format:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(green)(%cd)%C(reset) %C(blue)<%an>%C(reset)' --date=short --graph --branches
+    slog        = log --pretty=format:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(green)(%cd)%C(reset) %C(blue)<%an>%C(reset)' --date=short
+    unstage     = reset HEAD --
+    cancel      = reset --soft HEAD^
+    wdiff       = diff --word-diff --ignore-all-space
+[core]
+    excludesfile = ~/.gitignore
+    quotepath = false
+    safecrlf = true
+    autocrlf = false
+[include]
+    path = ~/.gitconfig.local
+[push]
+    default = simple
+
+# end of file {{{1
+# vim:ft=gitconfig:et:ts=4:nowrap:fdm=marker
