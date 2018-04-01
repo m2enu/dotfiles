@@ -1,5 +1,5 @@
 DOTFILES_EXCLUDES := .DS_Store .config .git .gitignore .gitmodules .travis.yml
-DOTFILES_TARGET   := $(wildcard .??*) .config/nvim
+DOTFILES_TARGET   := $(wildcard .??*) bin .config/nvim
 DOTFILES_DIR      := $(PWD)
 DOTFILES_FILES    := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
 
