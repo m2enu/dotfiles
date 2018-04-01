@@ -3,6 +3,7 @@ export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:${PATH}
 export PATH=/usr/local/sbin:${PATH}
 export PATH=${PATH}:~/.local/bin
+export PATH=${PATH}:~/bin
 export XDG_CONFIG_HOME=${HOME}/.config
 
 # 色を使用出来るようにする {{{1
