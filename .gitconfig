@@ -12,6 +12,7 @@
     quotepath = false
     safecrlf = true
     autocrlf = false
+    pager = less -R -F -X
 [include]
     path = ~/.gitconfig.local
 [push]
