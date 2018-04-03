@@ -44,5 +44,12 @@ repo = 'zchee/deoplete-jedi'
 on_i = 1
 on_ft = ['python']
 
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = ['plantuml']
+hook_source = '''
+    let g:plantuml_executable_script = "~/bin/plantuml_svg"
+'''
+
 # end of file {{{1
 # vim:ft=toml:et:nowrap:fdm=marker

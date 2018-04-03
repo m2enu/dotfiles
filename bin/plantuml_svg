@@ -1,0 +1,5 @@
+#!/bin/bash
+plantuml -tsvg $@
+
+# end of file {{{1
+# vim:ft=sh:fdm=marker

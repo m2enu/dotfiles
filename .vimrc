@@ -419,6 +419,7 @@ function! s:LoadBundles()
     NeoBundle 'hachibeeDI/vim-vbnet'
     NeoBundle 'OrangeT/vim-csharp'
     NeoBundle 'hachibeeDI/vim-vbnet'
+    NeoBundle 'aklt/plantuml-syntax'
 endfunction
 
 " NeoBundle がインストールされているなら LoadBundles() を呼び出す
