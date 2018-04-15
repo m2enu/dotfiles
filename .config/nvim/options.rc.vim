@@ -78,6 +78,7 @@ set infercase
 
 " other {{{1
 set wildmenu
+set wildignorecase
 set tw=0
 set whichwrap=b,s,h,l,<,>,[,]
 set hidden

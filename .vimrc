@@ -75,6 +75,7 @@ set backspace=indent,eol,start
 set ambiwidth=double
 "コマンドライン補完するときに強化されたものを使う
 set wildmenu
+set wildignorecase
 "一行の文字数制限を解除
 set textwidth=0
 "80文字目にラインを入れる
