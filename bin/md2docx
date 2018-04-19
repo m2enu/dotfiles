@@ -1,0 +1,36 @@
+#!/bin/bash
+
+## <!-- usage {{{1 -->
+#
+function usage() {
+    cat << _EOT_
+Usage:
+    `basename $0` filename
+
+Description:
+    convert Markdown (.md) to Microsoft Word (.docx)
+
+Arguments:
+    filename        Markdown file name
+_EOT_
+}
+
+## <!-- main {{{1 -->
+#
+if [ ! which pandoc > /dev/null 2>&1 ]; then
+    echo "pandoc is not found."
+    exit 1
+elif [ $# -lt 1 ]; then
+    usage
+    exit 1
+fi
+
+readonly PANDOC_TEMP="${HOME}/.pandoc/templates/template.docx"
+readonly PANDOC_FLAGS="--reference-doc=${PANDOC_TEMP}"
+readonly PANDOC_IN=$1
+readonly PANDOC_OUT="${PANDOC_IN/.md/.docx}"
+
+pandoc ${PANDOC_FLAGS} -o ${PANDOC_OUT} ${PANDOC_IN}
+
+# end of file {{{1
+# vim:ft=sh:et:nowrap:fdm=marker
