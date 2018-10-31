@@ -137,3 +137,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# disable terminal stop
+if [ "$SSH_TTY" != "" ]; then
+    stty stop undef
+fi
