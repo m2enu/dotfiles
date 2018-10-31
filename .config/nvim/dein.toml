@@ -32,6 +32,9 @@ repo = 'tpope/vim-speeddating'
 [[plugins]]
 repo = 'dbeniamine/todo.txt-vim'
 
+[[plugins]]
+repo = 'vim-scripts/vcscommand.vim'
+
 # colors {{{1
 
 [[plugins]]
@@ -57,6 +60,18 @@ repo = 'altercation/vim-colors-solarized'
 #'''
 
 # languages {{{1
+
+[[plugins]]
+repo = 'OrangeT/vim-csharp'
+on_ft = 'cs'
+
+[[plugins]]
+repo = 'hachibeeDI/vim-vbnet'
+on_ft = 'vbnet'
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = 'plantuml'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
