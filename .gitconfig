@@ -6,6 +6,7 @@
     slog        = log --pretty=format:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(green)(%cd)%C(reset) %C(blue)<%an>%C(reset)' --date=short
     unstage     = reset HEAD --
     cancel      = reset --soft HEAD^
+    revert      = reset --hard HEAD^
     wdiff       = diff --word-diff --ignore-all-space
 [core]
     excludesfile = ~/.gitignore
@@ -13,6 +14,7 @@
     safecrlf = true
     autocrlf = false
     pager = less -R -F -X
+    editor = vim
 [include]
     path = ~/.gitconfig.local
 [push]
