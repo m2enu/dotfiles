@@ -452,10 +452,14 @@ call s:InitNeoBundle()
 " 自動的にQuickfix-Windowで開く {{{1
 autocmd QuickFixCmdPost *grep* cwindow
 
-" 各種プラグイン設定
-"----------------------------------------
+" コメント中の特定の単語を強調表示する {{{1
+augroup HilightsForce
+  autocmd!
+  autocmd WinEnter,BufRead,BufNew,Syntax * :silent! call matchadd('Todo', '\(TODO\|NOTE\|FIXME\|BUG\):')
+  autocmd WinEnter,BufRead,BufNew,Syntax * highlight Todo guibg=Red guifg=White
+augroup END
 
-" VCS command {{{2
+" VCS command {{{1
 if executable('hg')
     let g:VCSCommandHGExec = 'hg'
 elseif executable('C:\app\TortoiseHg\hg.exe')
@@ -464,12 +468,24 @@ elseif executable('/c/app/TortoiseHg/hg.exe')
     let g:VCSCommandHGExec = '/c/app/TortoiseHg/hg.exe'
 endif
 
-" vim-indent-guides <Leader>igで起動
+if executable('git')
+    let g:VCSCommandGitExec = 'git'
+elseif executable('C:\app\Git\bin\git.exe')
+    let g:VCSCommandHGExec = 'C:\app\Git\bin\git.exe'
+elseif executable('/c/app/Git/git.exe')
+    let g:VCSCommandHGExec = '/c/app/Git/git.exe'
+endif
+
+" vim-indent-guides <Leader>igで起動 {{{1
 "let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#121212 ctermbg=233
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#1C1C1C ctermbg=235
 "let g:indent_guides_enable_on_vim_startup = 0
 "let g:indent_guides_guide_size = 1
+
+" ctags {{{1
+nnoremap <C-]> g<C-]>
+set tags=.tags;$HOME
 
 " Template {{{1
 "----------------------------------------
