@@ -55,14 +55,19 @@ elseif has('mac')
 elseif has('unix')
 
 elseif has('win32') || has('win64')
-  set guifont=Consolas:h11:cSHIFTJIS
+  set guifont=Ricty_Diminished:h12:cSHIFTJIS
+  set renderoptions=type:directx
+  set antialias
+  "set guifont=Consolas:h11:cSHIFTJIS
   "set guifont=inconsolata:h12:cSHIFTJIS
 endif
 
 "印刷用フォント
 if has('printer')
   if has('win32') || has('win64')
-    set guifont=Consolas:h11:cSHIFTJIS
+    set guifont=Ricty_Diminished:h12:cSHIFTJIS
+    set renderoptions=type:directx
+    set antialias
     "set guifont=inconsolata:h12:cSHIFTJIS
   endif
 endif
