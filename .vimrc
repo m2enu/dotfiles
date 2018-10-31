@@ -371,83 +371,44 @@ augroup END
 " 各種プラグイン設定 {{{1
 "----------------------------------------
 
-" NeoBundle設定 {{{1
+" dein設定 {{{1
 "----------------------------------------
+augroup MyAutoCmd
+    autocmd!
+augroup END
 
-" NeoBundle がインストールされていない時、
-" もしくは、プラグインの初期化に失敗した時の処理
-function! s:WithoutBundles()
-    colorscheme desert
-    " その他の処理
-endfunction
+let s:dein_cache_dir = $HOME. '/.cache/dein'
+let s:dein_config_dir = $HOME. '/.config/nvim'
+let s:dein_repo_name = 'Shougo/dein.vim'
+let s:dein_repo_dir = s:dein_cache_dir. '/repos/github.com/'. s:dein_repo_name
 
-" NeoBundle よるプラグインのロードと各プラグインの初期化
-function! s:LoadBundles()
-    " originalrepos on github
-    NeoBundle 'Shougo/neobundle.vim'
+" check dein.vim has beein installed or not
+if !isdirectory(s:dein_repo_dir)
+    echo "dein is not installed -> install now"
+    let s:dein_repo = "https://github.com/". s:dein_repo_name
+    echo "git clone ". s:dein_repo. " ". s:dein_repo_dir
+    call system("git clone ". s:dein_repo. " ". s:dein_repo_dir)
+endif
+let &runtimepath = &runtimepath. ','. s:dein_repo_dir
 
-    " repos on github
-    NeoBundle 'Shougo/unite.vim'
-    NeoBundle 'Shougo/vimshell'
-    "NeoBundle 'Shougo/vimproc'
-    NeoBundle 'Shougo/vimproc', {
-    \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-    \ },
-    \ }
-    "NeoBundle 'nathanaelkane/vim-indent-guides'
-    NeoBundle 'vcscommand.vim'
-    "NeoBundle 'mitechie/pyflakes-pathogen'
-    "NeoBundle 'reinh/vim-makegreen'
-    "NeoBundle 'lambdalisue/nose.vim'
-    "NeoBundle 'thinca/vim-quickrun'
-    NeoBundle 'wesleyche/SrcExpl'
-    NeoBundle 'wesleyche/Trinity'
-    "NeoBundle 'scrooloose/nerdtree'
-    "NeoBundle 'taglist.vim'
-    NeoBundle 'osyo-manga/vim-over'
+" begin loading plugins
+if dein#load_state(s:dein_cache_dir)
+    let s:toml = s:dein_config_dir. '/dein.toml'
+    let s:toml_lazy = s:dein_config_dir. '/dein_lazy.toml'
 
-    " colorschemes
-    NeoBundle 'w0ng/vim-hybrid'
-    NeoBundle 'nanotech/jellybeans.vim'
-    NeoBundle 'vim-scripts/newspaper.vim'
-    NeoBundle 'altercation/vim-colors-solarized'
+    call dein#begin(s:dein_cache_dir)
+    call dein#load_toml(s:toml, {'lazy': 0})
+    call dein#load_toml(s:toml_lazy, {'lazy': 1})
+    call dein#end()
+    call dein#save_state()
+endif
 
-    " syntax
-    NeoBundle 'hachibeeDI/vim-vbnet'
-    NeoBundle 'OrangeT/vim-csharp'
-    NeoBundle 'hachibeeDI/vim-vbnet'
-    NeoBundle 'aklt/plantuml-syntax'
-endfunction
+if has('vim_starting') && dein#check_install()
+    call dein#install()
+endif
 
-" NeoBundle がインストールされているなら LoadBundles() を呼び出す
-" そうでないなら WithoutBundles() を呼び出す
-function! s:InitNeoBundle()
-    if isdirectory(expand("$MY_VIMRUNTIME/bundle/neobundle.vim/"))
-        filetype plugin indent off
-
-        if has('vim_starting')
-            set runtimepath+=$MY_VIMRUNTIME/bundle/neobundle.vim/
-        endif
-        try
-            call neobundle#begin(expand("$MY_VIMRUNTIME/bundle/"))
-            call s:LoadBundles()
-            call neobundle#end()
-        catch
-            call s:WithoutBundles()
-        endtry
-    else
-        call s:WithoutBundles()
-    endif
-
-    filetype indent plugin on
-    syntax on
-endfunction
-
-call s:InitNeoBundle()
+filetype plugin indent on
+syntax enable
 
 " 自動的にQuickfix-Windowで開く {{{1
 autocmd QuickFixCmdPost *grep* cwindow
