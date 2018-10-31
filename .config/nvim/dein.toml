@@ -26,6 +26,12 @@ hook_add = '''
     \ }
 '''
 
+[[plugins]]
+repo = 'tpope/vim-speeddating'
+
+[[plugins]]
+repo = 'dbeniamine/todo.txt-vim'
+
 # colors {{{1
 
 [[plugins]]
