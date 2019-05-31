@@ -1,32 +1,42 @@
 # -*- encoding: utf-8 -*-
 # Python Startup Script
-import readline
-import rlcompleter
-import atexit
-import os
 import sys
-import termcolor
 
-# enable tab complete
-if hasattr(readline.__doc__, '__iter__') and 'libedit' in readline.__doc__:
-    readline.parse_and_bind("bind ^I rl_complete")
-else:
-    readline.parse_and_bind("tab: complete")
-
-# save history in file
-histfile = os.path.join(os.environ['HOME'], '.pythonhistory')
-try:
-    readline.read_history_file(histfile)
-except IOError:
-    pass
-atexit.register(readline.write_history_file, histfile)
+error_count = 0
 
 # terminal color
-sys.ps1 = termcolor.colored('>>> ', 'cyan')
-sys.ps2 = termcolor.colored('... ', 'green')
+try:
+    import termcolor
+    sys.ps1 = termcolor.colored('>>> ', 'cyan')
+    sys.ps2 = termcolor.colored('... ', 'green')
+    del termcolor
+except Exception as e:
+    sys.stdout.write('Error: ' + e.message + '\n')
+    error_count += 1
+
+# enable tab complete and save histroy in file
+try:
+    import gnureadline as readline, rlcompleter, atexit, os
+
+    # tab complete
+    if hasattr(readline.__doc__, '__iter__') and 'libedit' in readline.__doc__:
+        readline.parse_and_bind("bind ^I rl_complete")
+    else:
+        readline.parse_and_bind("tab: complete")
+
+    # history
+    histfile = os.path.join(os.environ['HOME'], '.pythonhistory')
+    readline.read_history_file(histfile)
+    atexit.register(readline.write_history_file, histfile)
+
+    del readline, rlcompleter, atexit, os, histfile
+except Exception as e:
+    sys.stdout.write('Error: ' + e.message + '\n')
+    error_count += 1
 
 # finish
-sys.stdout.write(".pythonstartup loaded successfully !!\n")
-del os, histfile, readline, rlcompleter, atexit, sys, termcolor
+if (error_count == 0):
+    sys.stdout.write(".pythonstartup loaded successfully !!\n")
+del sys
 
 # vi: ft=python:et:ts=4:nowrap:fdm=marker
