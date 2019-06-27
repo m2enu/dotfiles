@@ -44,6 +44,12 @@ hook_add = '''
     command! -range Ld call linediff#Linediff(<line1>, <line2>, {})
 '''
 
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+
+[[plugins]]
+repo = "tpope/vim-fugitive"
+
 # colors {{{1
 
 [[plugins]]
