@@ -34,6 +34,7 @@ repo = 'dbeniamine/todo.txt-vim'
 
 [[plugins]]
 repo = 'vim-scripts/vcscommand.vim'
+#repo = 'fourjay/vim-vcscommand'
 
 [[plugins]]
 repo = 'AndrewRadev/linediff.vim'
@@ -49,6 +50,15 @@ repo = "airblade/vim-gitgutter"
 
 [[plugins]]
 repo = "tpope/vim-fugitive"
+
+[[plugins]]
+repo = "junegunn/vim-easy-align"
+hook_add = '''
+    " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+    vmap <Enter> <Plug>(EasyAlign)
+    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+    nmap ga <Plug>(EasyAlign)
+'''
 
 # colors {{{1
 
