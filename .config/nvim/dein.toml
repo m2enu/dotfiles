@@ -64,43 +64,28 @@ hook_add = '''
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
-hook_add = '''
+on_event = ['VimEnter']
+hook_post_source = '''
     set background=dark
-    au MyAutoCmd VimEnter * nested colorscheme hybrid
+    colorscheme hybrid
 '''
 
 [[plugins]]
 repo = 'jacoborus/tender.vim'
-#hook_add = '''
+#on_event = ['VimEnter']
+#hook_post_source = '''
 #    set background=dark
-#    au MyAutoCmd VimEnter * nested colorscheme tender
+#    colorscheme tender
 #'''
 
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'
-#hook_add = '''
+#on_event = ['VimEnter']
+#hook_post_source = '''
 #    let g:solarized_termcolors=256
 #    set background=dark
-#    au MyAutoCmd VimEnter * nested colorscheme solarized
+#    colorscheme solarized
 #'''
-
-# languages {{{1
-
-[[plugins]]
-repo = 'OrangeT/vim-csharp'
-on_ft = 'cs'
-
-[[plugins]]
-repo = 'hachibeeDI/vim-vbnet'
-on_ft = 'vbnet'
-
-[[plugins]]
-repo = 'aklt/plantuml-syntax'
-on_ft = 'plantuml'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
 
 # end of file {{{1
 # vim:ft=toml:et:nowrap:fdm=marker

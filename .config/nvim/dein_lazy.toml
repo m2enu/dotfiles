@@ -40,6 +40,22 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'OrangeT/vim-csharp'
+on_ft = ['cs']
+
+[[plugins]]
+repo = 'hachibeeDI/vim-vbnet'
+on_ft = ['vbnet']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo = 'leshill/vim-json'
+on_ft = ['json']
+
+[[plugins]]
 repo = 'zchee/deoplete-jedi'
 on_i = 1
 on_ft = ['python']
@@ -49,6 +65,13 @@ repo = 'aklt/plantuml-syntax'
 on_ft = ['plantuml']
 hook_source = '''
     let g:plantuml_executable_script = "~/bin/plantuml_svg"
+'''
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
+hook_source = '''
+    let g:vim_markdown_folding_disabled = 1
 '''
 
 # end of file {{{1
