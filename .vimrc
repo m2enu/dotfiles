@@ -126,7 +126,7 @@ set showmatch matchtime=1
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
 "タブを設定
-set tabstop=8
+set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 " '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
@@ -159,7 +159,7 @@ endif
 
 "色テーマ設定
 "gvimの色テーマは.gvimrcで指定する
-colorscheme desert
+colorscheme delek
 " ルーラーを表示 (noruler:非表示)
 set ruler
 " 行末で折り返さない
@@ -454,6 +454,10 @@ set tags=.tags;$HOME
 "    autocmd!
 "    autocmd BufNewFile *.py 0r $HOME/vimfiles/templates/skel.py
 "augroup END
+
+" specify filetype manually {{{1
+autocmd BufRead,BufNewFile *.800 setfiletype asm
+autocmd BufRead,BufNewFile *.850 setfiletype asm
 
 " 一時設定 {{{1
 "----------------------------------------
