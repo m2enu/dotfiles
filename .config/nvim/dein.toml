@@ -64,28 +64,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
-on_event = ['VimEnter']
-hook_post_source = '''
-    set background=dark
-    colorscheme hybrid
+hook_add = '''
+au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
-
-[[plugins]]
-repo = 'jacoborus/tender.vim'
-#on_event = ['VimEnter']
-#hook_post_source = '''
-#    set background=dark
-#    colorscheme tender
-#'''
-
-[[plugins]]
-repo = 'altercation/vim-colors-solarized'
-#on_event = ['VimEnter']
-#hook_post_source = '''
-#    let g:solarized_termcolors=256
-#    set background=dark
-#    colorscheme solarized
-#'''
 
 # end of file {{{1
 # vim:ft=toml:et:nowrap:fdm=marker
