@@ -1,6 +1,7 @@
 # language# ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+export XDG_CONFIG_HOME=${HOME}/.config
 
 # User dependent .bashrc file
 if [ -f "${HOME}/.bashrc_tmux" ]; then
