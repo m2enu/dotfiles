@@ -8,11 +8,13 @@
     cancel      = reset --soft HEAD^
     revert      = reset --hard HEAD^
     wdiff       = diff --word-diff --ignore-all-space
+    reposize    = count-objects -vH
 [core]
     excludesfile = ~/.gitignore
     quotepath = false
     safecrlf = true
     autocrlf = false
+    whitespace = cr-at-eol
     pager = less -R -F -X
     editor = vim
 [include]
