@@ -65,6 +65,7 @@ hook_add = '''
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 hook_add = '''
+set background=dark
 au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
 
