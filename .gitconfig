@@ -21,6 +21,8 @@
     path = ~/.gitconfig.local
 [push]
     default = simple
+[pull]
+    rebase = false
 
 # end of file {{{1
 # vim:ft=gitconfig:et:ts=4:nowrap:fdm=marker
