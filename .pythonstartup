@@ -31,7 +31,7 @@ try:
 
     del readline, rlcompleter, atexit, os, histfile
 except Exception as e:
-    sys.stdout.write('Error: ' + e.message + '\n')
+    sys.stdout.write('Error: {0}\n'.format(e))
     error_count += 1
 
 # finish
