@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 export XDG_CONFIG_HOME=${HOME}/.config
+export PIP_CONFIG_FILE=${HOME}/.pip.conf
 
 # User dependent .bashrc file
 if [ -f "${HOME}/.bashrc_tmux" ]; then
