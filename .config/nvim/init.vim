@@ -51,6 +51,7 @@ syntax enable
 runtime! options.rc.vim
 runtime! keymap.rc.vim
 runtime! autocmd.rc.vim
+runtime! tab.rc.vim
 
 " end of file {{{1
 " vim:ft=vim:et:nowrap:fdm=marker
