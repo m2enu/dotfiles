@@ -77,5 +77,13 @@ hook_source = '''
     let g:vim_markdown_new_list_item_indent = 0
 '''
 
+[[plugins]]
+repo = 'pprovost/vim-ps1'
+on_ft = ['ps1']
+hook_source = '''
+    let g:ps1_nofold_blocks = 1
+    let g:ps1_nofold_sig = 1
+'''
+
 # end of file {{{1
 # vim:ft=toml:et:nowrap:fdm=marker
