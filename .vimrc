@@ -458,6 +458,7 @@ set tags=.tags;$HOME
 " specify filetype manually {{{1
 autocmd BufRead,BufNewFile *.800 setfiletype asm
 autocmd BufRead,BufNewFile *.850 setfiletype asm
+autocmd BufRead,BufNewFile *.rec setfiletype srec
 
 " 一時設定 {{{1
 "----------------------------------------

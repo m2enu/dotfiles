@@ -32,6 +32,7 @@ augroup END
 " specify filetype manually {{{1
 autocmd BufRead,BufNewFile *.800 setfiletype asm
 autocmd BufRead,BufNewFile *.850 setfiletype asm
+autocmd BufRead,BufNewFile *.rec setfiletype srec
 
 " end of file {{{1
 " vim:ft=vim:et:nowrap:fdm=marker
