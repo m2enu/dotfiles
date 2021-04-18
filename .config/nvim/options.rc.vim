@@ -62,7 +62,9 @@ set showcmd
 
 " edit {{{1
 set backspace=indent,eol,start
+if !exists('g:vscode')
 set ambiwidth=double
+endif
 set clipboard+=unnamedplus
 set virtualedit=block
 set nrformats-=octal
