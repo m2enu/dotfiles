@@ -9,6 +9,18 @@ if has('folding')
     nnoremap <expr> l foldlevel(line('.')) ? "\<Right>zo" : "\<Right>"
 endif
 
+" insert mode {{{1
+inoremap <silent> <C-p> <Up>
+inoremap <silent> <C-n> <Down>
+inoremap <silent> <C-b> <Left>
+inoremap <silent> <C-f> <Right>
+inoremap <silent> <C-a> <Home>
+inoremap <silent> <C-e> <End>
+inoremap <silent> <C-d> <Del>
+inoremap <silent> <C-k> <Esc>lDa
+inoremap <silent> <C-y> <Esc>Pa
+inoremap <silent> <C-u> <Esc>d0xi
+
 " command mode {{{1
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
@@ -18,6 +30,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Delete>
 cnoremap <C-h> <BS>
+cnoremap <C-y> <C-r>"
 cnoremap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
 
 " end of file {{{1
