@@ -62,6 +62,12 @@ hook_add = '''
     nmap ga <Plug>(EasyAlign)
 '''
 
+[[plugins]]
+repo = "prabirshrestha/vim-lsp"
+
+[[plugins]]
+repo = "mattn/vim-lsp-settings"
+
 # colors {{{1
 
 [[plugins]]
