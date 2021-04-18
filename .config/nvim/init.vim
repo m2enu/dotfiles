@@ -4,8 +4,8 @@ if &compatible
 endif
 
 " python setting {{{1
-let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog = $PYTHON2_HOST_PROG
+let g:python3_host_prog = $PYTHON3_HOST_PROG
 let g:python_highlight_all = 1
 
 " reset augroup {{{1
