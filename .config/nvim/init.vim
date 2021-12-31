@@ -30,11 +30,13 @@ let &runtimepath = &runtimepath. ','. s:dein_repo_dir
 
 " begin loading plugins
 if dein#load_state(s:dein_cache_dir)
-    let s:toml = s:dein_config_dir. '/dein.toml'
+    let s:toml_main = s:dein_config_dir. '/dein.toml'
+    let s:toml_defx = s:dein_config_dir. '/dein_defx.toml'
     let s:toml_lazy = s:dein_config_dir. '/dein_lazy.toml'
 
     call dein#begin(s:dein_cache_dir)
-    call dein#load_toml(s:toml, {'lazy': 0})
+    call dein#load_toml(s:toml_main, {'lazy': 0})
+    call dein#load_toml(s:toml_defx, {'lazy': 0})
     call dein#load_toml(s:toml_lazy, {'lazy': 1})
     call dein#end()
     call dein#save_state()
