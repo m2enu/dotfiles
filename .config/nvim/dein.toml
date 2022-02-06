@@ -74,6 +74,13 @@ hook_add = '''
 [[plugins]]
 repo = "mattn/vim-lsp-settings"
 
+[[plugins]]
+repo = "lambdalisue/fern.vim"
+hook_add = '''
+    nnoremap <silent> <Leader>e :<C-u>Fern . -drawer<CR>
+    nnoremap <silent> <Leader>E :<C-u>Fern . -drawer -reveal=%<CR>
+'''
+
 # colors {{{1
 
 [[plugins]]
