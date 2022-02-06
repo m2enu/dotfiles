@@ -78,9 +78,16 @@ repo = "mattn/vim-lsp-settings"
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+#hook_add = '''
+#set background=dark
+#au MyAutoCmd VimEnter * ++nested colorscheme hybrid
+#'''
+
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'
 hook_add = '''
 set background=dark
-au MyAutoCmd VimEnter * ++nested colorscheme hybrid
+au MyAutoCmd VimEnter * ++nested colorscheme gruvbox-material
 '''
 
 # end of file {{{1
