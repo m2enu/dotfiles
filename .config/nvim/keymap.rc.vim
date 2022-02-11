@@ -1,15 +1,15 @@
 " map prefix {{{1
-let g:mapleader = "\<Space>"
+let g:mapleader = ";"
 nnoremap <Leader>   <Nop>
 xnoremap <Leader>   <Nop>
-nnoremap [dev]      <Nop>
-xnoremap [dev]      <Nop>
-nmap     m          [dev]
-xmap     m          [dev]
-nnoremap [ff]       <Nop>
-xnoremap [ff]       <Nop>
-nmap     z          [ff]
-xmap     z          [ff]
+"nnoremap [dev]      <Nop>
+"xnoremap [dev]      <Nop>
+"nmap     m          [dev]
+"xmap     m          [dev]
+"nnoremap [ff]       <Nop>
+"xnoremap [ff]       <Nop>
+"nmap     z          [ff]
+"xmap     z          [ff]
 
 " normal mode {{{1
 nnoremap <Down> gj

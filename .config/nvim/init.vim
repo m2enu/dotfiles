@@ -13,6 +13,9 @@ augroup MyAutoCmd
     autocmd!
 augroup END
 
+" load keymap {{{1
+runtime! keymap.rc.vim
+
 " dein.vim {{{1
 let s:dein_cache_dir = $HOME. '/.cache/dein'
 let s:dein_config_dir = $XDG_CONFIG_HOME. '/nvim'
@@ -51,7 +54,6 @@ syntax enable
 
 " load other settings {{{1
 runtime! options.rc.vim
-runtime! keymap.rc.vim
 runtime! autocmd.rc.vim
 runtime! tab.rc.vim
 
