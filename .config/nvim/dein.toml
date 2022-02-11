@@ -93,6 +93,9 @@ repo = 'w0ng/vim-hybrid'
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
 hook_add = '''
+au ColorScheme * highlight Comment  term=none
+au ColorScheme * highlight Comment cterm=none
+au ColorScheme * highlight Comment   gui=none
 set background=dark
 au MyAutoCmd VimEnter * ++nested colorscheme gruvbox-material
 '''
